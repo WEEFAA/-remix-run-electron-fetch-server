@@ -15,18 +15,6 @@ export type ErrorHandler = (
  */
 export interface RequestListenerOptions {
     /**
-     * Overrides the protocol of the incoming request URL. By default the request URL protocol
-     * is derived from the custom protocol scheme registered with Electron.
-     *
-     * For example, if you register `myapp:` but want URLs to appear as `https:`:
-     *
-     * ```ts
-     * createRequestListener(handler, { protocol: 'https:' })
-     * ```
-     */
-    protocol?: string;
-
-    /**
      * An error handler that determines the response when the request handler throws an error.
      * By default a 500 Internal Server Error response will be sent.
      *

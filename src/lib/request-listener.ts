@@ -39,12 +39,10 @@ export function createRequestListener(
             return abortedResponse();
         }
 
-        // Process the request (handle protocol override if needed)
-        let processedRequest = processRequest(request, options);
-
         let response: Response;
+
         try {
-            response = await handler(processedRequest);
+            response = await handler(request);
         } catch (error) {
             // Check if error was due to abort
             if (options?.signal?.aborted) {
@@ -69,29 +67,6 @@ export function createRequestListener(
 
         return response;
     };
-}
-
-/**
- * Processes the incoming request, applying any transformations specified in options.
- *
- * @param request - The incoming request.
- * @param options - Request listener options.
- * @returns The processed request.
- */
-function processRequest(
-    request: Request,
-    options?: RequestListenerOptions
-): Request {
-    // Override protocol if specified
-    if (options?.protocol) {
-        let url = new URL(request.url);
-        if (url.protocol !== options.protocol) {
-            url.protocol = options.protocol;
-            return new Request(url, request);
-        }
-    }
-
-    return request;
 }
 
 function defaultErrorHandler(error: unknown): Response {
