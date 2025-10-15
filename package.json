@@ -1,6 +1,6 @@
 {
   "name": "@rayweefa/electron-fetch-server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Remix adapter for Electron's protocol handler using Web Fetch API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WEEFAA/-remix-run-electron-fetch-server",
+    "url": "git+https://github.com/WEEFAA/-remix-run-electron-fetch-server"
   },
   "homepage": "https://github.com/WEEFAA/-remix-run-electron-fetch-server#readme",
   "author": "Ael Festijo <aelfestijo@gmail.com>",
