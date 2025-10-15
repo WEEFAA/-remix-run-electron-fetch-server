@@ -22,7 +22,12 @@
     "web-api",
     "desktop"
   ],
-  "author": "aelfestijo@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WEEFAA/-remix-run-electron-fetch-server",
+  },
+  "homepage": "https://github.com/WEEFAA/-remix-run-electron-fetch-server#readme",
+  "author": "Ael Festijo <aelfestijo@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "electron": ">=^23.0.0"
