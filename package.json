@@ -1,9 +1,10 @@
 {
-  "name": "@remix-run/electron-fetch-server",
+  "name": "@rayweefa/electron-fetch-server",
   "version": "0.1.0",
   "description": "Remix adapter for Electron's protocol handler using Web Fetch API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "private": false,
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
