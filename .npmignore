@@ -1,0 +1,19 @@
+# Source files
+src/
+*.ts
+!*.d.ts
+tsconfig.json
+
+# Development files
+examples/
+.gitignore
+.npmignore
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
+*.log
+
