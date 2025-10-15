@@ -5,8 +5,6 @@ import { app, BrowserWindow, protocol } from "electron"
 import { createRouter , html, json, route } from '@remix-run/fetch-router';
 import { createRequestListener } from '@remix-run/electron-fetch-server';
 
-let mainWindow;
-
 // Create a simple router
 const router = createRouter();
 
@@ -96,8 +94,11 @@ router.map(routes.home, showHome);
 router.map(routes.about, showAbout);
 router.map(routes.api, getApiData);
 
+// other routes
+// router.map(routes.resource, handlers)
+
 async function createWindow() {
-  mainWindow = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     webPreferences: {
