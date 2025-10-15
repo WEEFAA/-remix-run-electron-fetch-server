@@ -1,0 +1,19 @@
+{
+  "name": "electron-fetch-server-example-fetch-router",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fetch Router example for @remix-run/electron-fetch-server",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron ."
+  },
+  "dependencies": {
+    "@remix-run/electron-fetch-server": "file:../..",
+    "@remix-run/fetch-router": "~0.6.0",
+    "electron": "^28.0.0",
+    "undici": "^7.0.0"
+  }
+}
+
