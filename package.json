@@ -1,6 +1,6 @@
 {
   "name": "@rayweefa/electron-fetch-server",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Remix adapter for Electron's protocol handler using Web Fetch API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
