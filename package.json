@@ -12,6 +12,7 @@
     "clean": "rm -rf dist",
     "test": "node --test --require tsx/cjs src/__tests__/request-listener.test.ts"
   },
+  "git": "https://github.com/WEEFAA/-remix-run-electron-fetch-server",
   "keywords": [
     "remix",
     "electron",
