@@ -45,6 +45,7 @@ app.whenReady().then(async () => {
 // Example: Using with @remix-run/fetch-router
 import { app, BrowserWindow, protocol } from "electron";
 import { createRouter, html, json, route } from "@remix-run/fetch-router";
+import { logger } from "@remix-run/fetch-router/logger-middleware";
 import { createRequestListener } from "@remix-run/electron-fetch-server";
 
 // Create a simple router
@@ -132,6 +133,7 @@ const getApiData = () => {
 };
 
 // Map routes
+router.use(logger());
 router.map(routes.home, showHome);
 router.map(routes.about, showAbout);
 router.map(routes.api, getApiData);
@@ -139,7 +141,7 @@ router.map(routes.api, getApiData);
 // other routes
 // router.map(routes.resource, handlers)
 
-async function createWindow() {
+function createWindow() {
     const mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
@@ -150,10 +152,6 @@ async function createWindow() {
     });
 
     mainWindow.loadURL("myapp:///");
-
-    if (process.env.NODE_ENV === "development") {
-        mainWindow.webContents.openDevTools();
-    }
 }
 
 app.whenReady().then(async () => {
@@ -173,7 +171,7 @@ app.whenReady().then(async () => {
             })
         );
 
-        await createWindow();
+        createWindow();
 
         app.on("activate", () => {
             if (BrowserWindow.getAllWindows().length === 0) {
